@@ -34,17 +34,45 @@ ul.navbar li {
   body {
 
     font-family: 'Courier New', monospace;
+    background-color: white;
   }
 
   label {
 
     color:black;
   }
-  .Search {
+    .Search {
     display: block;
 	text-align: center
 }
   #demo{
     display: block;
 	text-align: center
+}
+
+.sidenav {
+  width: 130px;
+  position: absolute;
+  z-index: 1;
+  top: 220px;
+  left: 10px;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav h2{
+ padding: 14px;	
+ display: inline-block;
+}
+
+.sidenav a {
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: lightblue;
 }

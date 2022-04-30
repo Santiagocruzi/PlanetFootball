@@ -10,44 +10,28 @@
   <body class="main">
     <!-- this is the start of content -->
     <center>
-    <ul class="navbar">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="fixtures.html">World Fixtures</a></li>
-    </ul>
+        <ul class="navbar">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="Premier League.html">Premier League</a></li>
+            <li><a href="La Liga.html">La Liga</a></li>
+            <li><a href="Serie A.html">Serie A</a></li>
+            <li><a href="Ligue 1.html">Ligue 1</a></li>
+            <li><a href="Bundesliga.html">Bundesliga</a></li>
+          </ul>
     </center>
 	
-	<div class="sidenav">
-	<h2>Top 5 Leagues</h2>
-	<a href="Premier League.html">Premier League</a></li>
-    <a href="La Liga.html">La Liga</a>
-    <a href="Serie A.html">Serie A</a>
-    <a href="Ligue 1.html">Ligue 1</a>
-    <a href="Bundesliga.html">Bundesliga</a>
-</div>
-
 	
-    <h1 style="text-align: center; color: black">Welcome to Planet Football</h1>
+
+	<br><br>
+    <h1 style="text-align: center; color: black">World Fixtures</h1>
     <br>
-   <div class=Search>
-    <label color = "white" for="search">Search Club:</label>
-    <input type="text" id="search" name="search" />
-    <input type="submit" value="Submit" onclick="searchClubFunc()" />
-	</div>
-    <br><br>
 
-    <center>
-    <img src="images/unnamed.jpg" alt="Messi" width="300" height="500">
-    <img src="images/neymar.jpg" alt="Neymar" width="300" height="500">
-    <img src="images/ronaldo.jpg" alt="Ronaldo" width="300" height="500">
-    <img src="images/pele.jpg" alt="Pele" width="300" height="500">
-    </center>
-<br><br>
+<br>
     
     <p id="demo"></p>
 
     <p id = "news"></p>
 
-    <!-- Scores**
 	<div id="wg-api-football-fixtures"
     data-host="api-football-v1.p.rapidapi.com"
     data-refresh="60"
@@ -66,7 +50,7 @@
     type="module"
     src="https://widgets.api-sports.io/football/1.1.8/widget.js">
 </script>
--->
+
 
     <!--	<div id="wg-api-football-fixture"
     data-host="api-football-v1.p.rapidapi.com"
@@ -129,50 +113,7 @@
 */
 
 
-      let teamInfo = [];
-
-      function searchClubFunc() {
-        console.log("hello");
-        searchInput = document.getElementById("search").value;
-        const options = {
-          method: "GET",
-          headers: {
-            "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
-            "X-RapidAPI-Key":
-              "d7e1726998msh13b8b10d05d38ccp1b1fcajsne421dfb72cfa",
-          },
-        };
-
-        fetch(
-          `https://api-football-v1.p.rapidapi.com/v3/teams?search=${searchInput}`,
-          options
-        )
-          .then((response) => response.json())
-          .then((response) => {
-            teamInfo.push(response.response[0].team.name);
-            teamInfo.push(response.response[0].team.country);
-            teamInfo.push(response.response[0].team.founded);
-            teamInfo.push(
-              "<img src = '" + response.response[0].team.logo + "'/>"
-            );
-            console.log(teamInfo);
-
-            msg =
-              "Team Name: " +
-              response.response[0].team.name +
-              "<br>" +
-              "<img src = '" +
-              response.response[0].team.logo +
-              "'/>" +
-              "<br>Country: " +
-              response.response[0].team.country +
-              "<br>Founded: " +
-              response.response[0].team.founded;
-
-            document.getElementById("demo").innerHTML = msg;
-          })
-          .catch((err) => console.error(err));
-      }
+     
 
       /**
 	for (const r of response.response[0].team) {
