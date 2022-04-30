@@ -34,6 +34,7 @@ ul.navbar li {
   body {
 
     font-family: 'Courier New', monospace;
+    background-color: white;
   }
 
   label {
@@ -51,7 +52,7 @@ ul.navbar li {
 
 .sidenav {
   width: 130px;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 220px;
   left: 10px;
