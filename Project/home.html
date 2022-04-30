@@ -105,16 +105,14 @@
 
           msg = ""
 
-          for (let i = 0; i < news.length; i++) {
+          for (let i = 0; i < news.length; i= i+3) {
           msg = msg + 
-              news[i] +
-              "<br><img src = '" +
+             "<br><br>" + news[i] +
+              "<br><br><img src = '" +
               news[i+1] +
               "'/>" +
-              "<br>URL: " +
+              "<br><br>URL: " +
               news[i+2]
-
-            
 
 
           }
