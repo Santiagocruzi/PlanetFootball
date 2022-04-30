@@ -42,6 +42,8 @@
     
     <p id="demo"></p>
 
+    <p id = "news"></p>
+
     <!-- Scores**
 	<div id="wg-api-football-fixtures"
     data-host="api-football-v1.p.rapidapi.com"
@@ -79,6 +81,50 @@
  -->
 
     <script>
+
+      let news = []
+      const options = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Host': 'livescore-football.p.rapidapi.com',
+          'X-RapidAPI-Key': 'ac790266a8msh28702431c8eef9ap1cb279jsnb11d96a8f361'
+        }
+      };
+
+      fetch('https://livescore-football.p.rapidapi.com/soccer/news-list?page=1', options)
+        .then(response => response.json())
+        .then(response => {
+
+          for (let i = 0; i < response.data.length; i++) {
+  
+          news.push(response.data[i].caption);
+          news.push(response.data[i].image);
+          news.push(response.data[i].url);
+          console.log(news)
+          }
+
+          msg = ""
+
+          for (let i = 0; i < news.length; i++) {
+          msg = msg + 
+              news[i] +
+              "<br><img src = '" +
+              news[i+1] +
+              "'/>" +
+              "<br>URL: " +
+              news[i+2]
+
+            
+
+
+          }
+          document.getElementById("news").innerHTML = msg;
+
+        })
+        .catch(err => console.error(err));
+
+
+
       let teamInfo = [];
 
       function searchClubFunc() {
