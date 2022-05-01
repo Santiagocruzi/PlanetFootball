@@ -23,7 +23,7 @@ ul.navbar li {
   }
 
   ul.navbar li a:hover {
-    background-color: lightblue;
+    background-color: #D1D1D1;
   }
 
   .main {
@@ -74,5 +74,20 @@ ul.navbar li {
 }
 
 .sidenav a:hover {
-  background-color: lightblue;
+  background-color: #D1D1D1;
+}
+
+ #news .newsDiv{
+	 background-color: #F4F9F9;
+	 width:800px; 
+	 margin:0 auto 15px;
+	 padding:7px 40px;
+	 text-align: center;
+ }
+#news mark {
+  background-color: #F4F9F9;
+  color: black;
+}}
+#news a {
+  background-color: #F4F9F9;
 }

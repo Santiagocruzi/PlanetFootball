@@ -9,9 +9,12 @@
   </style>
   <body class="main">
     <!-- this is the start of content -->
+    <center>
     <ul class="navbar">
       <li><a href="home.html">Home</a></li>
+      <li><a href="fixtures.html">World Fixtures</a></li>
     </ul>
+    </center>
 	
 	<div class="sidenav">
 	<h2>Top 5 Leagues</h2>
@@ -41,7 +44,11 @@
 <br><br>
     
     <p id="demo"></p>
-
+	 
+	 <center>
+	<h1>Current News:</h1>
+    </center>
+	
     <p id = "news"></p>
 
     <!-- Scores**
@@ -82,12 +89,13 @@
 
     <script>
 
-      let news = []
+/*
+ let news = []
       const options = {
         method: 'GET',
         headers: {
           'X-RapidAPI-Host': 'livescore-football.p.rapidapi.com',
-          'X-RapidAPI-Key': 'ac790266a8msh28702431c8eef9ap1cb279jsnb11d96a8f361'
+          'X-RapidAPI-Key': '2e0ed02540msh029bc5074b67080p111b24jsn4c0bccc080fa'
         }
       };
 
@@ -106,13 +114,14 @@
           msg = ""
 
           for (let i = 0; i < news.length; i= i+3) {
-          msg = msg + 
-             "<br><br>" + news[i] +
-              "<br><br><img src = '" +
-              news[i+1] +
-              "'/>" +
-              "<br><br>URL: " +
-              news[i+2]
+          msg =
+			msg + "<div class= newsDiv>" + 
+			 "<h3><mark>" + news[i] + "</mark></h3>" +
+			 '<a href=' + news[i+2] + '/>' + 
+			 "<img src = '" + news[i+1] + "'width=800/>" + '<a/>' +
+			"</div>";
+
+            
 
 
           }
@@ -121,8 +130,7 @@
         })
         .catch(err => console.error(err));
 
-
-
+*/
       let teamInfo = [];
 
       function searchClubFunc() {
