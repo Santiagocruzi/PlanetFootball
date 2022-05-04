@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      type="text/css"
+      media="screen"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center" style="height: 100px">
+          <h1>Premier League Statistics</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4 text-center" style="height: 70px; background-color: #F4F9F9;">
+          <h3>Top Scorers</h3>
+        </div>
+        <div class="col-xs-4 text-center" style="height: 70px; background-color: #F4F9F9">
+            <h3>Top Assistors</h3>
+          </div>
+          <div class="col-xs-4 text-center" style="height: 70px; background-color: #F4F9F9">
+            <h3>Top Red Cards</h3>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4" id="left" style="height: 200px; background-color: #F4F9F9">
+          left
+        </div>
+        <div class="col-xs-4" id="center" style="height: 200px; background-color: #F4F9F9">
+          Center
+        </div>
+        <div class="col-xs-4" id="right" style="height: 200px; background-color: #F4F9F9">
+          Right
+        </div>
+      </div>
+    </div>
+
+    <div id="hello"></div>
+
+    <script>
+        /*
+        
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+          "X-RapidAPI-Key":
+            "ac790266a8msh28702431c8eef9ap1cb279jsnb11d96a8f361",
+        },
+      };
+
+      fetch(
+        "https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=39&season=2021",
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          topScorers = [];
+          //dict = {}
+
+          for (let i = 0; i < response.response.length; i++) {
+            topScorers.push(response.response[i].player.name);
+            topScorers.push(response.response[i].statistics[0].goals.total);
+            //dict[response.response[i].player.name] = response.response[i].statistics[0].goals.total
+
+            //console.log(dict)
+          }
+
+          console.log(topScorers);
+
+          var myTable =
+          "<table class = 'statsTable'>" + "<tr>" + "<td style = 'text-decoration: underline; padding: 5; text-align: center'>Player</td>" + "<td style = 'padding: 5; text-align: center'>Goals</td>" + "</tr>"
+
+          for (let i = 0; i < topScorers.length; i = i + 2) {
+            myTable +=
+            "<tr><td style = 'padding: 5; text-align: center'>" + topScorers[i] + "</td>" + "<td style = 'padding: 5; text-align: center'>" + topScorers[i + 1] + "</td></tr>"
+          }
+
+          myTable += "</table>";
+
+          document.getElementById("left").innerHTML = myTable;
+        })
+        .catch((err) => console.error(err));
+
+      fetch(
+        "https://api-football-v1.p.rapidapi.com/v3/players/topassists?league=39&season=2021",
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          topAssisters = [];
+          //dict = {}
+
+          for (let i = 0; i < response.response.length; i++) {
+            topAssisters.push(response.response[i].player.name);
+            topAssisters.push(response.response[i].statistics[0].goals.assists);
+            //dict[response.response[i].player.name] = response.response[i].statistics[0].goals.total
+
+            //console.log(dict)
+          }
+
+          console.log(topAssisters);
+
+          var assistTable =
+            "<table class = 'statsTable'>" + "<tr>" + "<td style = 'text-decoration: underline; padding: 5; text-align: center'>Player</td>" + "<td style = 'padding: 5; text-align: center'>Assists</td>" + "</tr>"
+
+          for (let i = 0; i < topAssisters.length; i = i + 2) {
+            assistTable +=
+              "<tr>" + "<td style = 'padding: 5; text-align: center'>" + topAssisters[i] + "</td>" + "<td class = 'secondCell' style = 'padding: 5; text-align: center'>" + topAssisters[i + 1] + "</td>" + "</tr>";
+          }
+
+          assistTable += "</table>";
+
+          document.getElementById("center").innerHTML = assistTable;
+        })
+        .catch((err) => console.error(err));
+
+      fetch(
+        "https://api-football-v1.p.rapidapi.com/v3/players/topredcards?league=39&season=2021",
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          topRed = [];
+          //dict = {}
+
+          for (let i = 0; i < response.response.length; i++) {
+            topRed.push(response.response[i].player.name);
+            topRed.push(response.response[i].statistics[0].cards.red);
+            //dict[response.response[i].player.name] = response.response[i].statistics[0].goals.total
+
+            //console.log(dict)
+          }
+
+          console.log(topRed);
+
+          var redTable =
+          "<table class = 'statsTable'>" + "<tr>" + "<td style = 'text-decoration: underline; padding: 5; text-align: center'>Player</td>" + "<td style = 'padding: 5; text-align: center'>Red Cards</td>" + "</tr>"
+
+          for (let i = 0; i < topRed.length; i = i + 2) {
+            redTable += "<tr><td style = 'padding: 5; text-align: center'>" + topRed[i] + "</td>" + "<td style = 'padding: 5; text-align: center'>" + topRed[i + 1] + "</td></tr>";
+          }
+
+          redTable += "</table>";
+
+          document.getElementById("right").innerHTML = redTable;
+        })
+        .catch((err) => console.error(err));
+
+        */
+    </script>
+  </body>
+</html>
