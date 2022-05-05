@@ -5,35 +5,48 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
       type="text/css"
       media="screen"
+
+      
     />
+    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
-    <div class="container">
+
+    <center>
+      <ul class="navbar">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="fixtures.html">World Fixtures</a></li>
+        <li><a href="Live Scores.html">Live Scores</a></li>
+      </ul>
+      </center>
+
+
+    <div class="container" style = "padding: 50px">
       <div class="row">
         <div class="col-xs-12 text-center" style="height: 100px">
-          <h1>Premier League Statistics</h1>
+          <h1 style= "font-weight: bold;">Premier League Statistics</h1>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-4 text-center" style="height: 70px; background-color: #F4F9F9;">
-          <h3>Top Scorers</h3>
+        <div class="col-xs-4 text-center" style="height: 70px; background-color: #D1D1D1;">
+          <h3 style= "font-weight: bold;">Top Scorers</h3>
         </div>
-        <div class="col-xs-4 text-center" style="height: 70px; background-color: #F4F9F9">
-            <h3>Top Assistors</h3>
+        <div class="col-xs-4 text-center" style="height: 70px; background-color: #D1D1D1">
+            <h3 style= "font-weight: bold;">Top Assistors</h3>
           </div>
-          <div class="col-xs-4 text-center" style="height: 70px; background-color: #F4F9F9">
-            <h3>Top Red Cards</h3>
+          <div class="col-xs-4 text-center" style="height: 70px; background-color: #D1D1D1">
+            <h3 style= "font-weight: bold;">Top Red Cards</h3>
           </div>
       </div>
       <div class="row">
-        <div class="col-xs-4" id="left" style="height: 200px; background-color: #F4F9F9">
+        <div class="col-xs-4" id="left" style="height: 200px">
           left
         </div>
-        <div class="col-xs-4" id="center" style="height: 200px; background-color: #F4F9F9">
+        <div class="col-xs-4" id="center" style="height: 200px">
           Center
         </div>
-        <div class="col-xs-4" id="right" style="height: 200px; background-color: #F4F9F9">
+        <div class="col-xs-4" id="right" style="height: 200px">
           Right
         </div>
       </div>
@@ -42,7 +55,7 @@
     <div id="hello"></div>
 
     <script>
-        /*
+        
         
       const options = {
         method: "GET",
@@ -73,7 +86,7 @@
           console.log(topScorers);
 
           var myTable =
-          "<table class = 'statsTable'>" + "<tr>" + "<td style = 'text-decoration: underline; padding: 5; text-align: center'>Player</td>" + "<td style = 'padding: 5; text-align: center'>Goals</td>" + "</tr>"
+          "<table class = 'statsTable' style = 'background-color: #F4F9F9'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'>Player</td>" + "<td style = 'padding: 5; text-align: center'>Goals</td>" + "</tr>"
 
           for (let i = 0; i < topScorers.length; i = i + 2) {
             myTable +=
@@ -106,7 +119,7 @@
           console.log(topAssisters);
 
           var assistTable =
-            "<table class = 'statsTable'>" + "<tr>" + "<td style = 'text-decoration: underline; padding: 5; text-align: center'>Player</td>" + "<td style = 'padding: 5; text-align: center'>Assists</td>" + "</tr>"
+            "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'>Player</td>" + "<td style = 'padding: 5; text-align: center'>Assists</td>" + "</tr>"
 
           for (let i = 0; i < topAssisters.length; i = i + 2) {
             assistTable +=
@@ -139,7 +152,7 @@
           console.log(topRed);
 
           var redTable =
-          "<table class = 'statsTable'>" + "<tr>" + "<td style = 'text-decoration: underline; padding: 5; text-align: center'>Player</td>" + "<td style = 'padding: 5; text-align: center'>Red Cards</td>" + "</tr>"
+          "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'>Player</td>" + "<td style = 'padding: 5; text-align: center'>Reds</td>" + "</tr>"
 
           for (let i = 0; i < topRed.length; i = i + 2) {
             redTable += "<tr><td style = 'padding: 5; text-align: center'>" + topRed[i] + "</td>" + "<td style = 'padding: 5; text-align: center'>" + topRed[i + 1] + "</td></tr>";
@@ -151,7 +164,7 @@
         })
         .catch((err) => console.error(err));
 
-        */
+        
     </script>
   </body>
 </html>
