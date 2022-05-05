@@ -29,13 +29,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-4 text-center" style="height: 70px; background-color: #D1D1D1;">
+        <div class="col-xs-4 text-center" style="height: 70px; background-color: #F6F6F6;">
           <h3 style= "font-weight: bold;">Top Scorers</h3>
         </div>
-        <div class="col-xs-4 text-center" style="height: 70px; background-color: #D1D1D1">
+        <div class="col-xs-4 text-center" style="height: 70px; background-color: #F6F6F6">
             <h3 style= "font-weight: bold;">Top Assistors</h3>
           </div>
-          <div class="col-xs-4 text-center" style="height: 70px; background-color: #D1D1D1">
+          <div class="col-xs-4 text-center" style="height: 70px; background-color: #F6F6F6">
             <h3 style= "font-weight: bold;">Top Red Cards</h3>
           </div>
       </div>
@@ -76,6 +76,7 @@
           dict = {}
 
           for (let i = 0; i < response.response.length; i++) {
+            topScorers.push(response.response[i].player.photo);
             topScorers.push(response.response[i].player.name);
             topScorers.push(response.response[i].statistics[0].goals.total);
             dict[response.response[i].player.name] = response.response[i].statistics[0].goals.total
@@ -88,9 +89,9 @@
           var myTable =
           "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'><b>Player</td>" + "<td style = 'padding: 5; text-align: center'><b>Goals</td>" + "</tr>"
 
-          for (let i = 0; i < topScorers.length; i = i + 2) {
+          for (let i = 0; i < topScorers.length; i = i + 3) {
             myTable +=
-            "<tr><td style = 'padding: 5; text-align: center'>" + topScorers[i] + "</td>" + "<td style = 'padding: 5; text-align: center'>" + topScorers[i + 1] + "</td></tr>"
+            "<tr><td style = 'padding: 5; text-align: center'>" + '<img src = "' + topScorers[i] + '" alt = "playerImage" width = "50" height = "50">' + "</td>" + "<td>" + topScorers[i + 1] + "</td>" + "<td style = 'padding: 5; text-align: center'>" + topScorers[i + 2] + "</td></tr>"
           }
 
           myTable += "</table>";
@@ -109,6 +110,7 @@
           dict = {}
 
           for (let i = 0; i < response.response.length; i++) {
+            topAssisters.push(response.response[i].player.photo);
             topAssisters.push(response.response[i].player.name);
             topAssisters.push(response.response[i].statistics[0].goals.assists);
             dict[response.response[i].player.name] = response.response[i].statistics[0].goals.total
@@ -121,9 +123,9 @@
           var assistTable =
             "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'><b>Player</td>" + "<td style = 'padding: 5; text-align: center'><b>Assists</td>" + "</tr>"
 
-          for (let i = 0; i < topAssisters.length; i = i + 2) {
+          for (let i = 0; i < topAssisters.length; i = i + 3) {
             assistTable +=
-              "<tr>" + "<td style = 'padding: 5; text-align: center'>" + topAssisters[i] + "</td>" + "<td class = 'secondCell' style = 'padding: 5; text-align: center'>" + topAssisters[i + 1] + "</td>" + "</tr>";
+            "<tr><td style = 'padding: 5; text-align: center'>" + '<img src = "' + topAssisters[i] + '" alt = "playerImage" width = "50" height = "50">' + "</td>" + "<td>" + topAssisters[i + 1] + "</td>" + "<td style = 'padding: 5; text-align: center'>" + topAssisters[i + 2] + "</td></tr>"
           }
 
           assistTable += "</table>";
@@ -142,6 +144,7 @@
           dict = {}
 
           for (let i = 0; i < response.response.length; i++) {
+            topRed.push(response.response[i].player.photo);
             topRed.push(response.response[i].player.name);
             topRed.push(response.response[i].statistics[0].cards.red);
             dict[response.response[i].player.name] = response.response[i].statistics[0].goals.total
@@ -154,8 +157,8 @@
           var redTable =
           "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'><b>Player</td>" + "<td style = 'padding: 5; text-align: center'><b>Reds</td>" + "</tr>"
 
-          for (let i = 0; i < topRed.length; i = i + 2) {
-            redTable += "<tr><td style = 'padding: 5; text-align: center'>" + topRed[i] + "</td>" + "<td style = 'padding: 5; text-align: center'>" + topRed[i + 1] + "</td></tr>";
+          for (let i = 0; i < topRed.length; i = i + 3) {
+            redTable += "<tr><td style = 'padding: 5; text-align: center'>" + '<img src = "' + topRed[i] + '" alt = "playerImage" width = "50" height = "50">' + "</td>" + "<td>" + topRed[i + 1] + "</td>" + "<td style = 'padding: 5; text-align: center'>" + topRed[i + 2] + "</td></tr>"
           }
 
           redTable += "</table>";

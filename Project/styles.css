@@ -78,28 +78,34 @@ ul.navbar li {
 }
 
  #news .newsDiv{
-	 background-color: #F4F9F9;
+	 background-color: #F6F6F6;
 	 width:800px; 
 	 margin:0 auto 15px;
 	 padding:7px 40px;
 	 text-align: center;
  }
 #news mark {
-  background-color: #F4F9F9;
+  background-color: #F6F6F6;
   color: black;
 }
 #news a {
-  background-color: #F4F9F9;
+  background-color: #F6F6F6;
 }
 
 
 .statistics a{
-    color: black;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 14px 16px;
 }
 
-.statistics a:hover {
+.statistics a:hover{
   background-color: #D1D1D1;
 }
+
+.statsTable tr:hover {
+  background: #D1D1D1;
+  font-weight: bold;
+}
+
 
