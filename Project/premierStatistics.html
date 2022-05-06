@@ -21,6 +21,7 @@
       </ul>
       </center>
 
+      
 
     <div class="container" style = "padding: 50px">
       <div class="row">
@@ -87,7 +88,7 @@
           console.log(topScorers);
 
           var myTable =
-          "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'><b>Player</td>" + "<td style = 'padding: 5; text-align: center'><b>Goals</td>" + "</tr>"
+          "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'><b>Player</td>" + "<td></td>" + "<td style = 'padding: 5; text-align: center'><b>Goals</td>" + "</tr>"
 
           for (let i = 0; i < topScorers.length; i = i + 3) {
             myTable +=
@@ -121,7 +122,7 @@
           console.log(topAssisters);
 
           var assistTable =
-            "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'><b>Player</td>" + "<td style = 'padding: 5; text-align: center'><b>Assists</td>" + "</tr>"
+            "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'><b>Player</td>" + "<td></td>" + "<td style = 'padding: 5; text-align: center'><b>Assists</td>" + "</tr>"
 
           for (let i = 0; i < topAssisters.length; i = i + 3) {
             assistTable +=
@@ -155,7 +156,7 @@
           console.log(topRed);
 
           var redTable =
-          "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'><b>Player</td>" + "<td style = 'padding: 5; text-align: center'><b>Reds</td>" + "</tr>"
+          "<table class = 'statsTable'>" + "<tr>" + "<td style = 'padding: 5; text-align: center'><b>Player</td>" + "<td></td>" + "<td style = 'padding: 5; text-align: center'><b>Reds</td>" + "</tr>"
 
           for (let i = 0; i < topRed.length; i = i + 3) {
             redTable += "<tr><td style = 'padding: 5; text-align: center'>" + '<img src = "' + topRed[i] + '" alt = "playerImage" width = "50" height = "50">' + "</td>" + "<td>" + topRed[i + 1] + "</td>" + "<td style = 'padding: 5; text-align: center'>" + topRed[i + 2] + "</td></tr>"
