@@ -129,7 +129,7 @@
         )
           .then((response) => response.json())
           .then((response) => {
-            document.getElementById("searchPlayer").style.backgroundColor =
+            document.getElementById("search").style.backgroundColor =
               "white";
             //If connection and search parameter successful, capture team information and append to teamInfo array
             teamInfo.push(response.response[0].team.name);
