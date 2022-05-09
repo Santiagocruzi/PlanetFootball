@@ -74,6 +74,8 @@
         )
           .then((response) => response.json())
           .then((response) => {
+            document.getElementById("searchPlayer").style.backgroundColor =
+             "white";
             //If connection and search parameter successful, capture player information and append to playerInfo array
             playerInfo.push(response.response[0].player.name);
             playerInfo.push(response.response[0].player.age);
