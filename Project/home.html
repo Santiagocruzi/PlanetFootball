@@ -29,7 +29,7 @@
     <!-- Search bar to search for a football team -->
     <div class="Search">
       <label color="white" for="search">Search Club:</label>
-      <input type="text" id="search" name="search" placeholder = "Enter Team Name"/>
+      <input type="text" id="search" name="search" placeholder = "Enter Club Name"/>
       <input type="submit" value="Submit" onclick="searchClubFunc()" />
     </div>
     <br><br>
@@ -141,7 +141,7 @@
             //console.log(teamInfo);
 
             msg = 
-              "Team Name: " +
+              "Club Name: " +
               response.response[0].team.name +
               "<br>" +
               "<img src = '" +
@@ -158,7 +158,7 @@
             //If error 404 is returned, display team not found
             document.getElementById("search").style.backgroundColor = "#f0acac";
             document.getElementById("search").value = "";
-            document.getElementById("search").placeholder = "Team not found";
+            document.getElementById("search").placeholder = "Club not found";
           });
       }
     </script>
