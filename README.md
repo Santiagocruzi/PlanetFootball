@@ -1,5 +1,5 @@
 # Planet Football
-Planet Football is a football entertainment website for any football enthusiast.
+Planet Football is a football entertainment website that showcases current news, standings, and information about the Top 5 European leagues and it's players.
 
 <h2>Getting Started</h2>
 
