@@ -24,6 +24,6 @@ Each league page contains:
 - current league standings
 - statistics link displays
   - top scorers
-  - top assistor
+  - top assistors
   - top red cards
 
