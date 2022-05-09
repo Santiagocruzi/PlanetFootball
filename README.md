@@ -1,6 +1,5 @@
-# PlanetFootball
-Final Project for Advanced Web Development
-
+# Planet Football
+Planet Football is a football entertainment website for any football enthusiast.
 
 <h2>Getting Started</h2>
 
