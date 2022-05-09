@@ -1,93 +1,115 @@
 ul.navbar li {
-    list-style-type: none;
-    display: inline-block;
-  }
-
-  ul.navbar {
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    overflow: hidden;
-    z-index: 500;
-  }
-
-  ul.navbar li a {
-    display: block;
-    padding: 14px 16px;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-  }
-
-  ul.navbar li a:hover {
-    background-color: #D1D1D1;
-  }
-
-  .main {
-    padding: 5px;
-    margin-top: 30px;
-  }
-
-  body {
-
-    font-family: 'Courier New', monospace;
-    background-color: white;
-  }
-
-  label {
-
-    color:black;
-  }
-    .Search {
-    display: block;
-	text-align: center
-}
-  #demo{
-    display: block;
-	text-align: center
+  list-style-type: none;
+  display: inline-block;
 }
 
-.sidenav {
-  width: 130px;
-  position: absolute;
-  z-index: 1;
-  top: 220px;
-  left: 10px;
-  overflow-x: hidden;
-  padding: 8px 0;
+ul.navbar {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 500;
 }
 
-.sidenav h2{
- padding: 14px;	
- display: inline-block;
-}
-
-.sidenav a {
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 15px;
-  color: black;
+ul.navbar li a {
   display: block;
+  padding: 14px 16px;
+  color: black;
+  text-align: center;
+  text-decoration: none;
 }
 
-.sidenav a:hover {
+ul.navbar li a:hover {
   background-color: #D1D1D1;
 }
 
- #news .newsDiv{
-	 background-color: #F4F9F9;
-	 width:800px; 
-	 margin:0 auto 15px;
-	 padding:7px 40px;
-	 text-align: center;
- }
-#news mark {
-  background-color: #F4F9F9;
-  color: black;
-}}
-#news a {
-  background-color: #F4F9F9;
+.main {
+  padding: 5px;
+  margin-top: 30px;
 }
+
+body {
+
+  font-family: 'Courier New', monospace;
+  background-color: white;
+}
+
+label {
+
+  color:black;
+}
+  .Search {
+  display: block;
+text-align: center
+}
+#clubSearchDiv{
+  display: block;
+text-align: center
+}
+
+#playerDisplay{
+  display: block;
+text-align: center
+}
+
+.sidenav {
+width: 130px;
+position: absolute;
+z-index: 1;
+top: 220px;
+left: 10px;
+overflow-x: hidden;
+padding: 8px 0;
+}
+
+.sidenav h2{
+padding: 14px;	
+display: inline-block;
+}
+
+.sidenav a {
+padding: 14px 16px;
+text-decoration: none;
+font-size: 15px;
+color: black;
+display: block;
+}
+
+.sidenav a:hover {
+background-color: #D1D1D1;
+}
+
+#newsDisplay .newsDiv{
+ background-color: #F6F6F6;
+ width:800px; 
+ margin:0 auto 15px;
+ padding:7px 40px;
+ text-align: center;
+}
+#newsDisplay mark {
+background-color: #F6F6F6;
+color: black;
+}
+#newsDisplay a {
+background-color: #F6F6F6;
+}
+
+
+.statistics a{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+.statistics a:hover{
+background-color: #D1D1D1;
+}
+
+.statsTable tr:hover {
+background: #D1D1D1;
+font-weight: bold;
+}
+

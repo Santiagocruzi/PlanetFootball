@@ -1,0 +1,233 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      type="text/css"
+      media="screen"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <center>
+      <ul class="navbar">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="fixtures.html">World Fixtures</a></li>
+        <li><a href="Live Scores.html">Live Scores</a></li>
+      </ul>
+    </center>
+
+    <!--Organize page layout using bootstrap-->
+    <div class="container" style="padding: 50px">
+      <div class="row">
+        <div class="col-xs-12 text-center" style="height: 100px">
+          <h1 style="font-weight: bold">Ligue 1 Statistics</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="col-xs-4 text-center"
+          style="height: 70px; background-color: #f6f6f6"
+        >
+          <h3 style="font-weight: bold">Top Scorers</h3>
+        </div>
+        <div
+          class="col-xs-4 text-center"
+          style="height: 70px; background-color: #f6f6f6"
+        >
+          <h3 style="font-weight: bold">Top Assistors</h3>
+        </div>
+        <div
+          class="col-xs-4 text-center"
+          style="height: 70px; background-color: #f6f6f6"
+        >
+          <h3 style="font-weight: bold">Top Red Cards</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-4" id="left" style="height: 200px">left</div>
+        <div class="col-xs-4" id="center" style="height: 200px">Center</div>
+        <div class="col-xs-4" id="right" style="height: 200px">Right</div>
+      </div>
+    </div>
+
+    <script>
+      //API connection parameters & credentials for APIFootball
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+          "X-RapidAPI-Key":
+            "2e0ed02540msh029bc5074b67080p111b24jsn4c0bccc080fa",
+        },
+      };
+
+      fetch(
+        "https://api-football-v1.p.rapidapi.com/v3/players/topscorers?league=61&season=2021", //request to server with league and season
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          //array to hold top scorers
+          topScorers = [];
+
+          /*Iterate through array from JSON reponse 
+            Capture player information and append to topScorers array
+          */
+          for (let i = 0; i < response.response.length; i++) {
+            topScorers.push(response.response[i].player.photo);
+            topScorers.push(response.response[i].player.name);
+            topScorers.push(response.response[i].statistics[0].goals.total);
+          }
+
+          //console.log(topScorers);
+
+          /*Create table element, row elements, and cell elements
+            Every row has a player and total goals count
+            Cells dedicated for player image, player name, and total goal count 
+          */
+
+          var myTable =
+            "<table class = 'statsTable'>" +
+            "<tr>" +
+            "<td style = 'padding: 5; text-align: center'><b>Player</td>" +
+            "<td></td>" +
+            "<td style = 'padding: 5; text-align: center'><b>Goals</td>" +
+            "</tr>";
+
+          //for loop to display each player
+          for (let i = 0; i < topScorers.length; i = i + 3) {
+            //Iterates by 3, due to a player taking up 3 spots in the array (image, name, total goals)
+            myTable +=
+              "<tr><td style = 'padding: 5; text-align: center'>" +
+              '<img src = "' +
+              topScorers[i] +
+              '" alt = "playerImage" width = "50" height = "50">' +
+              "</td>" +
+              "<td>" +
+              topScorers[i + 1] +
+              "</td>" +
+              "<td style = 'padding: 5; text-align: center'>" +
+              topScorers[i + 2] +
+              "</td></tr>";
+          }
+
+          myTable += "</table>";
+
+          document.getElementById("left").innerHTML = myTable; //add to left column of the layout
+        })
+        .catch((err) => console.error(err));
+
+      fetch(
+        "https://api-football-v1.p.rapidapi.com/v3/players/topassists?league=61&season=2021", //request to server with league and season
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          //array to hold top assistors
+          topAssisters = [];
+
+          /*Iterate through array from JSON reponse 
+            Capture player information and append to topAssistors array
+          */
+          for (let i = 0; i < response.response.length; i++) {
+            topAssisters.push(response.response[i].player.photo);
+            topAssisters.push(response.response[i].player.name);
+            topAssisters.push(response.response[i].statistics[0].goals.assists);
+          }
+
+          //console.log(topAssisters);
+
+          /*Create table element, row elements, and cell elements
+            Every row has a player and total assists count
+            Cells dedicated for player image, player name, and total assists count
+          */
+          var assistTable =
+            "<table class = 'statsTable'>" +
+            "<tr>" +
+            "<td style = 'padding: 5; text-align: center'><b>Player</td>" +
+            "<td></td>" +
+            "<td style = 'padding: 5; text-align: center'><b>Assists</td>" +
+            "</tr>";
+
+          //for loop to display each player
+          for (let i = 0; i < topAssisters.length; i = i + 3) {
+            //Iterates by 3, due to a player taking up 3 spots in the array (image, name, total assists)
+            assistTable +=
+              "<tr><td style = 'padding: 5; text-align: center'>" +
+              '<img src = "' +
+              topAssisters[i] +
+              '" alt = "playerImage" width = "50" height = "50">' +
+              "</td>" +
+              "<td>" +
+              topAssisters[i + 1] +
+              "</td>" +
+              "<td style = 'padding: 5; text-align: center'>" +
+              topAssisters[i + 2] +
+              "</td></tr>";
+          }
+
+          assistTable += "</table>";
+
+          document.getElementById("center").innerHTML = assistTable; //add to center column of the layout
+        })
+        .catch((err) => console.error(err));
+
+      fetch(
+        "https://api-football-v1.p.rapidapi.com/v3/players/topredcards?league=61&season=2021", //request to server with league and season
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          //array to hold players with most red cards
+          topRed = [];
+
+          /*Iterate through array from JSON reponse 
+            Capture player information and append to topRed array
+          */
+          for (let i = 0; i < response.response.length; i++) {
+            topRed.push(response.response[i].player.photo);
+            topRed.push(response.response[i].player.name);
+            topRed.push(response.response[i].statistics[0].cards.red);
+          }
+
+          //console.log(topRed);
+
+          /*Create table element, row elements, and cell elements
+            Every row has a player and total red cards
+            Cells dedicated for player image, player name, and total red cards
+          */
+          var redTable =
+            "<table class = 'statsTable'>" +
+            "<tr>" +
+            "<td style = 'padding: 5; text-align: center'><b>Player</td>" +
+            "<td></td>" +
+            "<td style = 'padding: 5; text-align: center'><b>Reds</td>" +
+            "</tr>";
+
+          //for loop to display each player
+          for (let i = 0; i < topRed.length; i = i + 3) {
+            //Iterates by 3, due to a player taking up 3 spots in the array (image, name, total reds)
+            redTable +=
+              "<tr><td style = 'padding: 5; text-align: center'>" +
+              '<img src = "' +
+              topRed[i] +
+              '" alt = "playerImage" width = "50" height = "50">' +
+              "</td>" +
+              "<td>" +
+              topRed[i + 1] +
+              "</td>" +
+              "<td style = 'padding: 5; text-align: center'>" +
+              topRed[i + 2] +
+              "</td></tr>";
+          }
+
+          redTable += "</table>";
+
+          document.getElementById("right").innerHTML = redTable; //add to right column of the layout
+        })
+        .catch((err) => console.error(err));
+    </script>
+  </body>
+</html>
